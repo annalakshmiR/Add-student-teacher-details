@@ -1,0 +1,79 @@
+<div class="container-fluid">
+    <div class="row">
+           <div class="col-md-4 mt-4">
+               <div class="card  shadow p-4 card-center">
+                   <div class="form-floating  text-center">
+                       <h5 class="text-center text-warning">Student List</h5>
+                   </div>
+                       
+                       <div class=" mb-3">
+                           <label for="studentname">Student name</label>
+                           <input type="text" class="form-control" id="studentname" name="studentname" [(ngModel)]="student_name">
+                          
+                       </div>
+                       <div class=" mb-3">
+                           <label for="roll_no">Roll no</label>
+                           <input type="number" class="form-control" id="roll_no" name="roll_no" [(ngModel)]="roll_no">
+                           
+                       </div>
+                       <div class=" mb-3">
+                           <label for="age">Age</label>
+                           <input type="number" class="form-control" id="age" name="age" [(ngModel)]="age">
+                           
+                       </div>
+                       <div class=" mb-3">
+                        <label for="Class">Class</label>
+                        <input type="text" class="form-control" id="Class" name="Class" [(ngModel)]="class">
+                        
+                    </div>
+                    <div class=" mb-3">
+                        <label for="Section">Section</label>
+                        <input type="text" class="form-control" id="Section" name="Section" [(ngModel)]="section">
+                        
+                    </div>
+                    
+
+                    <div class=" mb-3">
+                        <label for="firstname">Teacher name</label>
+                        <input type="text" class="form-control" id="firstName" name="teachername" [(ngModel)]="teacher_name">
+                       
+                    </div>
+                       <button type="button" class="btn btn-outline-success" (click)="addstudent()">Add Student </button>
+               </div>
+           </div>
+           <div class="col-md-8 mt-2">
+               <h5 class="text-danger"> Student  List</h5>
+               <div class="card p-3 shadow">
+                   <div class="card-body">
+                       <table class="table table-hover">
+                           <thead>
+                             <tr>
+                               <th scope="col">Student name</th>
+                               <th scope="col">Roll no</th>
+                               <th scope="col">Age</th>
+                               <th scope="col">Class</th>
+                               <th scope="col">Section</th>
+                               <th scope="col">Teacher Name</th>
+                             </tr>
+                           </thead>
+                           <tbody>
+                             <tr *ngFor="let student of studentlist">
+                               <td >{{student.student_name}}</td>
+                               <td>{{student.roll_no}}</td>
+                               <td>{{student.age}}</td>
+                               <td>{{student.class}}</td>
+                               <td>{{student.section}}</td>
+                               <td>{{student.teacher_name}}</td>
+                               <td><button class="btn btn-outline-danger" (click)="deletestudent(student)">Delete</button>
+                               </td>
+                             </tr>
+                           </tbody>
+                         </table>
+                   </div>
+               </div>
+           </div>
+       </div>
+           
+   </div>
+   
+  
